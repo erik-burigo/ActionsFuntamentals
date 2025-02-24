@@ -11,7 +11,7 @@ on:
     inputs:
       environment: 
         description: 'Enviroment the action must be run on'
-        type: enviroment
+        type: environment
         default: "Test"
         required: true
 jobs:
