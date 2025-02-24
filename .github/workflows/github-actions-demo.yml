@@ -11,6 +11,7 @@ on:
     inputs:
       environment: 
         description: 'Enviroment the action must be run on'
+        type: enviroment
         required: true
         default: 'Production'
 jobs:
