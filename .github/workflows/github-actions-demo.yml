@@ -13,7 +13,7 @@ on:
         description: 'Enviroment the action must be run on'
         type: enviroment
         required: true
-        default: 'Production'
+        default: Production
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -29,3 +29,8 @@ jobs:
         run: |
           echo "The repository  ${{ github.repository }} containts the following files:"
           tree
+  Test:
+    runs-on: ubuntu-latest
+    if: 
+    steps:
+      - run: echo "Testing..."
