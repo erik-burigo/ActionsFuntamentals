@@ -24,6 +24,6 @@ jobs:
         run: |
           echo "Time is: $($date)"
           echo "time-var=$(date)" >> $GITHUB_OUTPUT
-          echo "Output is $(GITHUB_OUTPUT)"
+          echo "Output is: $GITHUB_OUTPUT"
         # 'time-var' here is a variable.
       
