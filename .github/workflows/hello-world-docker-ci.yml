@@ -3,6 +3,7 @@ on:
   push:
     branches: [ main ]
     paths: [ hello-world-docker-action/** ]
+    # double asterisk is like * but recursive
   workflow_dispatch:
 
 jobs:
