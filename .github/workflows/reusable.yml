@@ -15,11 +15,12 @@ jobs:
   reusable-job:
     runs-on: ubuntu-latest
     outputs:
-      current-time: ${{ steps.time.outputs.time }}
+      current-time: ${{ steps.time-step.outputs.time-var }}
     steps:
       - name: Greetings
         run: echo "Hello ${{ inputs.who-to-greet }}"
       - name: Set time
-        id: time
-        run: echo "time=$(date)" >> $GITHUB_OUTPUT
+        id: time-step
+        run: echo "time-var=$(date)" >> $GITHUB_OUTPUT
+        # 'time-var' here is a variable.
       
