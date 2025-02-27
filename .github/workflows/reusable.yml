@@ -6,11 +6,20 @@ on:
         description: 'The entity to greet'
         type: string
         required: true
-        default: World
+        default: World    
+      outputs:
+        current-time:
+          description: "The time of the greeting."
+          value: ${{ jobs.resuable-job.outputs.current-time }}
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
     steps:
       - name: Greetigns
         run: echo "Hello ${{ inputs.who-to-greet }}"
-        
+      - name: Set time
+        id: time
+        run: echo "time=$(date)" >> $GITHUB_OUTPUT
+    outputs:
+      current-time: ${{ steps.time.outputs.time }}
+      
