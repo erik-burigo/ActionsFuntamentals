@@ -21,6 +21,9 @@ jobs:
         run: echo "Hello ${{ inputs.who-to-greet }}"
       - name: Set time
         id: time-step
-        run: echo "time-var=$(date)" >> $GITHUB_OUTPUT
+        run: |
+          echo "Time is: $($date)"
+          echo "time-var=$(date)" >> $GITHUB_OUTPUT
+          echo "Output is $(GITHUB_OUTPUT)"
         # 'time-var' here is a variable.
       
