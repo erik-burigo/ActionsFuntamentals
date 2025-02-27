@@ -1,15 +1,1 @@
-name: Reusable workflow
-on:
-  workflow_call:
-    inputs:
-      who-to-greet:
-        description: 'The entity to greet'
-        type: string
-        required: true
-        default: World
-jobs:
-  reusable-job:
-    runs-on: ubuntu-latest
-    steps:
-      - echo Hello {{ inputs.who-to-greet }}
-        
+
